@@ -17,9 +17,6 @@ Gem::Specification.new do |spec|
   spec.license = 'PixelRidge-BEGPULSE'
   spec.required_ruby_version = '>= 3.2.2'
 
-  spec.metadata['allowed_push_host'] = 'https://git.pixelridgesoftworks.com/api/packages/PixelRidge-Softworks/rubygems'
-  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
-
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://git.pixelridgesoftworks.com/PixelRidge-Softworks/ActionHash'
 
@@ -32,6 +29,5 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.funding_uri = 'https://www.paypal.com/donate/?hosted_button_id=YF5XS7ZXQ6F8A'
   spec.post_install_message = 'If you find this gem useful, consider supporting its development: https://www.paypal.com/donate/?hosted_button_id=YF5XS7ZXQ6F8A'
 end
