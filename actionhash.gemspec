@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.email = ['ceo@pixelridgesoftworks.com']
 
   spec.summary = 'A custom hash mechanism for action tracking and validation.'
-  spec.description = 'ActionHash provides a way to create and validate custom hashes for tracking user actions in a secure and efficient manner.'
+  spec.description = 'ActionHash provides a way to create and validate custom hashes for tracking user actions in a
+                      secure and efficient manner.'
   spec.homepage = 'https://git.pixelridgesoftworks.com/PixelRidge-Softworks/ActionHash'
   spec.license = 'PixelRidge-BEGPULSE'
   spec.required_ruby_version = '>= 3.2.2'
@@ -27,7 +28,4 @@ Gem::Specification.new do |spec|
   spec.bindir = 'exe'
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
-
-  # Uncomment to register a new dependency of your gem
-  spec.add_dependency "dotenv", "~> 2.7"
 end

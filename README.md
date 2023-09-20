@@ -1,39 +1,97 @@
-# Actionhash
+# ActionHash
 
-TODO: Delete this and the text below, and describe your gem
+## Overview
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/actionhash`. To experiment with that code, run `bin/console` for an interactive prompt.
+ActionHash is a Ruby gem designed to validate a series of actions while obfuscating the associated data. It's particularly useful in scenarios where you want to ensure the integrity of a sequence of actions or data points, such as in gaming, financial transactions, IoT devices, and more.
+
+> :warning: **Security Note**: While ActionHash does obfuscate data, it should not be considered a form of encryption. If someone gains access to the generated secret key, the hashes can be undone. Use this gem as a part of your security strategy, not as the sole mechanism for securing sensitive information.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+```bash
+gem install actionhash
+```
 
-Install the gem and add to the application's Gemfile by executing:
+Or add it to your Gemfile:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+gem 'actionhash'
+```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+Then run:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```bash
+bundle install
+```
 
-## Usage
+## Basic Usage
 
-TODO: Write usage instructions here
+Here's a simple example to get you started:
 
-## Development
+```ruby
+require 'actionhash'
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+# Initialize
+keys = [ActionHash.generate_new_key]
+hashes = []  # Array to store finished hashes
+action_count = 0
+prev_hash = '0'
+data = "some_data"
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+# Create a hash
+new_hash = ActionHash.create(prev_hash, data, keys.last)
+hashes << new_hash  # Store the hash
+```
 
-## Contributing
+### Validating a Hash
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/actionhash. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/actionhash/blob/master/CODE_OF_CONDUCT.md).
+You can validate a hash using the `valid_hash?` method as follows:
 
-## License
+```ruby
+# Validate the hash
+is_valid = ActionHash.valid_hash?(hashes.last, keys.last, 20)
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+if is_valid
+  puts "Hash is valid."
+else
+  puts "Hash is invalid."
+end
+```
 
-## Code of Conduct
+The `valid_hash?` method works by recursively decrypting the hash and checking if it reaches a base hash of '0'. It takes the hash, the key, and an optional level parameter to limit the depth of validation.
 
-Everyone interacting in the Actionhash project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/actionhash/blob/master/CODE_OF_CONDUCT.md).
+Here's the method definition for your reference:
+
+```ruby
+def self.valid_hash?(hash, key, level = 20)
+  current_level = 0
+  loop do
+    puts "Debug: Validating hash=#{hash} with key=#{key} at level=#{current_level}"
+    return false if current_level >= level
+
+    decrypted_data = down_layer(hash, key)
+    return true if decrypted_data[:prev_hash] == '0'
+    return false if decrypted_data[:prev_hash].nil? || decrypted_data[:prev_hash].empty?
+
+    hash = decrypted_data[:prev_hash]
+    current_level += 1
+  end
+end
+```
+
+## Development Builds
+
+For those interested in using development builds of ActionHash, you can install them directly from our Gem server hosted at PixelRidge Softworks.
+
+Here's how you can install a development build:
+
+```bash
+gem install ActionHash --source "https://git.pixelridgesoftworks.com/api/packages/PixelRidge-Softworks/rubygems"
+```
+
+As an example, if you want to install a different gem from our Gem server, you can use the following command:
+
+```bash
+gem install Miniparser --source "https://git.pixelridgesoftworks.com/api/packages/PixelRidge-Softworks/rubygems"
+```
+
