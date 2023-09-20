@@ -3,6 +3,7 @@
 require_relative 'actionhash/version'
 require 'securerandom'
 
+# This is the main module for the ActionHash Gem
 module ActionHash
   class Error < StandardError; end
 
