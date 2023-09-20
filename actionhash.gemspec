@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 3.2.2'
 
   spec.metadata['allowed_push_host'] = 'https://git.pixelridgesoftworks.com/api/packages/PixelRidge-Softworks/rubygems'
+  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://git.pixelridgesoftworks.com/PixelRidge-Softworks/ActionHash'
