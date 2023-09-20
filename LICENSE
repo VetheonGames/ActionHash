@@ -1,6 +1,6 @@
 PixelRidge Business Exclusive General Public Use License for Software Executables (PixelRidge-BEGPULSE)
 
-## Version 1.2
+## Version 1.3
 
 ### Preamble
 
@@ -20,7 +20,7 @@ Subject to the terms and conditions of this License, Licensor hereby grants you 
 
 ### 3. Attribution
 
-You must provide proper attribution to the Licensor by including a plain-view backlink to the Licensor's website. This backlink must be easily visible to all users and not hidden under any circumstances.
+You must provide attribution to the Licensor by including a plain-view URI (or link) to the Licensor's website. This link must be easily visible to all users and not hidden under any circumstances. It should be noted that this should only apply in the event that it can. In the event a public link is impossible due to the nature of the usage of the Software, it's expected that attribution be given in a way such that the attribution complies with the Open Source Initiative standards for Open Source Attribution.
 
 ### 4. Business Use
 
@@ -36,11 +36,11 @@ The Software is provided "AS-IS," without any warranty of any kind, either expre
 
 ### 7. Updates and Versioning
 
-PixelRidge Softworks may or may not provide updates to the Software in the future. There is no obligation to provide updates or support for the Software. The latest version of this License shall always be considered the governing terms. PixelRidge Softworks will provide reasonable notice in the event of a license change.
+PixelRidge Softworks may or may not provide updates to the Software in the future. There is no obligation to provide updates or support for the Software. The latest version of this License shall always be considered the governing terms. PixelRidge Softworks will provide reasonable notice in the event of a license change. Notice shall be provided via email. Due to spam laws, we cannot just email you. You may opt into our specialized mailing list for licensing on our website.
 
 ### 8. Source Code Availability
 
-Any modifications to the Software must remain open-source and source-available in their entirety.
+Any modifications to the Software must remain open-source and source-available in their entirety unless another agreement with the Licensor is formed.
 
 ### 9. Compliance Monitoring
 
@@ -68,4 +68,4 @@ This License shall be governed by the laws of Alberta, Canada.
 
 ### 15. Miscellaneous
 
-This License constitutes the entire agreement between you and PixelRidge Softworks concerning the Software. It may only be modified in writing, signed by both parties.
+This License constitutes the entire agreement between you and PixelRidge Softworks concerning the Software.
