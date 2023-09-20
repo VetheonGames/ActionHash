@@ -9,8 +9,10 @@ Gem::Specification.new do |spec|
   spec.email = ['ceo@pixelridgesoftworks.com']
 
   spec.summary = 'A custom hash mechanism for action tracking and validation.'
-  spec.description = 'ActionHash provides a way to create and validate custom hashes for tracking user actions in a
-                      secure and efficient manner.'
+  spec.description = 'ActionHash is a Ruby gem designed to validate a series of actions while obfuscating the associated
+                      data. Its particularly useful in scenarios where you want to ensure the integrity of a sequence of
+                      actions or data points, such as in gaming, financial transactions, IoT devices, and more. Please
+                      go to the homepage for more information about how to use this gem!'
   spec.homepage = 'https://git.pixelridgesoftworks.com/PixelRidge-Softworks/ActionHash'
   spec.license = 'PixelRidge-BEGPULSE'
   spec.required_ruby_version = '>= 3.2.2'
