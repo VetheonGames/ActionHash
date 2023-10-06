@@ -1,4 +1,5 @@
 # ActionHash
+If you need more direct help, join our [Discord](https://discord.gg/SQeWBWS8v4)
 
 ## Overview
 
